@@ -1,3 +1,4 @@
+
 import { Command } from 'commander';
 import { table } from 'table';
 import { red, cyan, magenta } from 'kolorist';
@@ -26,18 +27,18 @@ program
 program.parse(process.argv);
 const options = program.opts();
 
-const fetchTodos = async (number: number, even: boolean) => {
+export const fetchTodos = async (number: number, even: boolean) => {
   const promises = [];
-  for (let i = 1; i <= number; i++) {
+  for (let i = 1; promises.length < number; i++) {
     if ((even && i % 2 === 0) || (!even && i % 2 !== 0)) {
-      promises.push(fetch(`https://jsonplaceholder.typicode.com/todos/${i}`));
+      promises.push(fetch(`https://jsonplaceholder.typicode.com/todos/${i}`).then(res => res.json()));
     }
   }
-  const results = await Promise.all(promises);
-  return await Promise.all(results.map((response) => response.json()));
+  const results: ITodo[] = await Promise.all(promises);
+  return results;
 };
 
-const displayTodos = (todos: ITodo[]) => {
+export const displayTodos = (todos: ITodo[]) => {
   // header for table
   const data = [[magenta('Id'), magenta('Title'), magenta('Completed')]];
 
