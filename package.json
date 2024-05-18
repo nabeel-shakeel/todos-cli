@@ -1,0 +1,31 @@
+{
+  "name": "todos-cli",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A utility to track your todos from the command line",
+  "repository": "git@github.com:nabeel-shakeel/todos-cli.git",
+  "author": "Nabeel Shakeel <nabeelshakeel130@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "bin": {
+    "td": "index.js"
+  },
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx unbuild --stub",
+    "build": "npx unbuild",
+    "prepublishOnly": "yarn build"
+  },
+  "engines": {
+    "node": ">=20.x.x"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.19",
+    "typescript": "^5.4.5",
+    "unbuild": "^2.0.0"
+  }
+}
