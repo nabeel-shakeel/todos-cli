@@ -10,6 +10,7 @@ interface ITodo {
   completed: boolean;
 }
 
+const API_URL = 'https://jsonplaceholder.typicode.com/todos';
 const program = new Command();
 
 program
@@ -31,7 +32,7 @@ export const fetchTodos = async (number: number, even: boolean) => {
   const promises = [];
   for (let i = 1; promises.length < number; i++) {
     if ((even && i % 2 === 0) || (!even && i % 2 !== 0)) {
-      promises.push(fetch(`https://jsonplaceholder.typicode.com/todos/${i}`).then(res => res.json()));
+      promises.push(fetch(`${API_URL}/${i}`).then(res => res.json()));
     }
   }
   const results: ITodo[] = await Promise.all(promises);
