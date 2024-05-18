@@ -41,3 +41,7 @@ Examples
 - Fetch 20 even todos `npx td`
 - Fetch 40 even todos `npx td -n 40 -e`
 - Fetch 10 odd todos `npx td -n 10 --no-even`
+
+## Tests
+
+Tests are written using jest. To run the test `yarn test`
