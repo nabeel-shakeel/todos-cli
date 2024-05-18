@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { fetchTodos, displayTodos } from '../src/index';
+import { fetchTodos, displayTodos } from '../src/todos';
 
 jest.mock('node-fetch', () => jest.fn());
 
