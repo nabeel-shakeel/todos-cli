@@ -2,6 +2,9 @@
 
 A command line utility that fetches and displays a specified number of todos from from the [JSONPlaceholder](https://jsonplaceholder.typicode.com/) API. It can fetch even or odd indexed todos and outputs the title and completion status in a table format.
 
+## Working Demo
+![Todos CLI Demo](./assets/todos-cli-demo.mov)
+
 ## Features
 
 - Fetches first `n` specified even number of todos, by default `20`
