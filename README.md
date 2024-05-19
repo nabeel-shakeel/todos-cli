@@ -27,8 +27,8 @@ A command line utility that fetches and displays a specified number of todos fro
 
 ## Usgae
 
-First, intsall it globally in system `npm i -g .`
-Then, run
+First, intsall it globally in system `npm i -g .` and then run `td`
+Or use with `npx`
 
 ```bash
 npx td -n <number> -e|-even --no-even
@@ -45,3 +45,10 @@ Examples
 ## Tests
 
 Tests are written using jest. To run the test `yarn test`
+
+## Dockerization
+
+Follow the below steps to build and run the docker conatiner
+
+1. Build docker image `docker build -t todos-cli .`
+2. Run docker container `docker run todos-cli -n 20`
